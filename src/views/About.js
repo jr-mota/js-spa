@@ -1,11 +1,11 @@
 import BaseView from "../../vanilla-spa/BaseView.js";
 
-export default class Home extends BaseView {
+export default class About extends BaseView {
   constructor(args) {
     super(args);
 
     this._template = `
-      ${this._components[0].getTemplate()}
+      <h1 align="center">About</h1> 
     `;
   }
 }

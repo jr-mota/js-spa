@@ -1,8 +1,8 @@
 import BaseComponent from "./BaseComponent.js";
 
 export default class BaseView {
-  template = ``;
-  components = [];
+  _template = ``;
+  _components = [];
 
   constructor(args) {
     if (args.components && Array.isArray(args.components)) {
@@ -12,7 +12,11 @@ export default class BaseView {
         }
       }
 
-      this.components = args.components;
+      this._components = args.components;
     }
+  }
+
+  getTemplate() {
+    return this._template;
   }
 }

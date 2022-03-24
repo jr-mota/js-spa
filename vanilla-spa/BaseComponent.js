@@ -1,9 +1,9 @@
 export default class BaseComponent {
-  template = ``;
+  _template = ``;
 
   constructor() {}
 
   getTemplate() {
-    return this.template;
+    return this._template;
   }
 }

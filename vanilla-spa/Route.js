@@ -1,8 +1,8 @@
 import BaseView from "./BaseView.js";
 
-export default class RouterPath {
-  path = "";
-  view = {};
+export default class Route {
+  _path = "";
+  _view = {};
 
   constructor(args) {
     if (args.path && args.view) {
@@ -10,8 +10,16 @@ export default class RouterPath {
         throw new Error("RouterPath type error");
       }
 
-      this.path = args.path;
-      this.view = args.view;
+      this._path = args.path;
+      this._view = args.view;
     }
+  }
+
+  getPath() {
+    return this._path;
+  }
+
+  getView() {
+    return this._view;
   }
 }
