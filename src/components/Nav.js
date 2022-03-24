@@ -1,6 +1,6 @@
 import BaseComponent from "../../vanilla-spa/BaseComponent.js";
 
-export default class nav extends BaseComponent {
+export default class Nav extends BaseComponent {
   constructor() {
     super();
 
