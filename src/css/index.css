@@ -15,3 +15,11 @@ body {
 
   margin: 0 auto;
 }
+
+nav {
+  padding: 10px;
+}
+
+nav a {
+  margin-right: 3px;
+}

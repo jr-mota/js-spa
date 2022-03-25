@@ -41,9 +41,17 @@ export default class Router {
     if (e.target.tagName === "A") {
       e.preventDefault();
 
-      this._currPath = e.target.pathname;
+      if (this.routesContainPath(e.target.pathname)) {
+        this._currPath = e.target.pathname;
 
-      this.renderPage();
+        this.renderPage();
+      } else {
+        if (this.routesContainPath("/404")) {
+          this._currPath = "/404";
+
+          this.renderPage();
+        }
+      }
     }
   }
 
@@ -51,5 +59,15 @@ export default class Router {
     this._currPath = window.location.pathname;
 
     this.renderPage();
+  }
+
+  routesContainPath(path) {
+    for (const route of this._routes) {
+      if (route.getPath() === path) {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
